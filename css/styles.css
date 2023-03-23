@@ -1,4 +1,4 @@
-/* ---------Стилі для index.html ---------------*/
+/* *---------Стилі для index.html ---------------*/
 
 .container {
   max-width: 1158px;
@@ -19,11 +19,13 @@
   --footer-text-color: #e7e9fc;
   --set-img-right: 20px;
   --set-img-bottom: 48px;
+  --bgd-soc-color: #8e8f99;
+  --bgd-color-icon: #31d0aa;
+  --modal-bgd-color: #fcfcfc;
+
   --card-shadow-team: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   --grad-hero: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
-  --bgd-soc-color: #8e8f99;
-  --bgd-color-icon: #31d0aa;
 
   --footer-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -33,6 +35,9 @@
 
   --portfolio-buttons-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  --backdrop-color: rgba(46, 47, 66, 0.4);
+  --modal-close-color: rgba(0, 0, 0, 0.1);
 }
 body {
   color: var(--main-text-color);
@@ -47,7 +52,7 @@ img {
   height: auto;
 }
 
-/* -------------Утиліти------------------- */
+/* *-------------Утиліти------------------- */
 
 .contacts {
   padding: 0;
@@ -74,7 +79,7 @@ img {
   margin: 0;
   padding: 0;
 }
-/*-------------------- Утиліти для portfolio -----------*/
+/**------------------ Утиліти для portfolio -----------*/
 
 .portfolio-text {
   margin-top: 0;
@@ -90,8 +95,8 @@ img {
   background-color: var(--main-bgrnd-color);
 }
 
-/*------------------------ Header----------------------- */
-/*-------------- Логотип компанії ------------*/
+/**-------------------- Header--------------------- */
+/**-------------- Логотип компанії ------------*/
 .page-header {
   border-bottom: 1px solid var(--footer-text-color);
   box-shadow: var(--footer-shadow);
@@ -99,11 +104,25 @@ img {
 
 /* Шрифти */
 
-/* Logo  Web та Studio */
+/* *--------Logo  Web та Studio-------- */
 
 .main-nav > a {
   padding-bottom: 24px;
   padding-top: 24px;
+}
+.item {
+  position: relative;
+}
+.item > .current::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 44px;
+  margin-top: 24px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-page-color);
 }
 
 .link-logo,
@@ -132,7 +151,7 @@ img {
   color: var(--accent-color);
 }
 
-/*-------------------- Main nav----------------- */
+/**-------------------- Main nav----------------- */
 
 .main-nav {
   display: flex;
@@ -165,7 +184,7 @@ img {
 .link-logo-item {
   color: var(--title-text-color);
 }
-/* -----------------------Contacts------------------------- */
+/* *-----------------------Contacts-----------------------*/
 
 .contact {
   display: flex;
@@ -184,7 +203,7 @@ img {
 /* .navigation .site-nav .item-list.current {
   color: var(--accent-page-color);
 } */
-/* ----------------Навігація---------------- */
+/* *----------------Навігація---------------- */
 .navigation {
   color: var(--title-text-color);
 }
@@ -201,7 +220,7 @@ img {
 .site-nav .link .item-list.current {
   color: var(--title-text-color);
 }
-.navigation .site-nav .link.current {
+.site-nav .link.current {
   color: var(--accent-color);
 }
 .adress-list .link-contact {
@@ -220,22 +239,26 @@ img {
 .site-nav .item-list {
   text-decoration: none;
 }
+.item-list {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .item-list:hover,
 .item-list:focus {
   color: var(--accent-page-color);
 }
 
-/*---------------- Contacts--------------- */
+/**---------------- Contacts--------------- */
 
 .contact .link-contact {
   color: var(--main-text-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact .link-contact:hover,
 .contact .link-contact:focus {
   color: var(--accent-page-color);
 }
-/* --------------Main ---------*/
-/* -----------Hero--------- */
+/** --------------Main ---------*/
+/** -----------Hero--------- */
 
 .hero-title {
   margin: 0 auto;
@@ -263,7 +286,7 @@ img {
   background-size: cover;
 }
 
-/* -------------------Button-------------- */
+/** -------------------Button-------------- */
 .button-hero {
   padding: 16px 32px;
   min-width: 169px;
@@ -285,7 +308,7 @@ img {
 .button-hero:focus {
   background-color: var(--accent-page-color);
 }
-/* ----------------SECTION 2 -переваги  */
+/** ----------------SECTION 2 -переваги ------ */
 
 .main-section {
   display: flex;
@@ -329,7 +352,7 @@ img {
   height: 64px;
 }
 
-/* -------------------Our works--------------------- */
+/* *-------------------Our works--------------------- */
 
 .our-work {
   display: flex;
@@ -357,7 +380,7 @@ img {
   text-transform: capitalize;
 }
 
-/* ----------------Team----------- */
+/* *----------------Team----------- */
 .section {
   padding-bottom: 120px;
 }
@@ -421,6 +444,7 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .soc-link-ing:hover,
 .soc-link-ing:focus {
@@ -450,6 +474,7 @@ img {
   border: 1px solid var(--bgd-soc-color);
   color: var(--bgd-soc-color);
   border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-link:hover,
@@ -462,7 +487,7 @@ img {
   height: 56px;
   fill: currentColor;
 }
-/*-------- Стилі для portfolio.html--------- */
+/**-------- Стилі для portfolio.html--------- */
 
 /* Елемент */
 .list-img {
@@ -483,6 +508,7 @@ img {
 }
 .links-works {
   display: block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .links-works:hover,
 .links-works:focus {
@@ -513,7 +539,7 @@ img {
   cursor: pointer;
 }
 
-/* -----------------Buttons------------ */
+/* *-----------------Buttons------------ */
 
 .section-btn-list {
   padding-top: 120px;
@@ -531,10 +557,15 @@ img {
 .main-btn-list .portfolio-btn + .portfolio-btn {
   margin-left: 24px;
 }
-
+.btn-item {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .btn-item:hover,
 .btn-item:focus {
   box-shadow: var(--portfolio-buttons-shadow);
+}
+.button-hero {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-hero:hover,
 .button-hero:focus {
@@ -556,6 +587,8 @@ img {
   border-radius: 4px;
   border: 1px solid var(--footer-text-color);
 }
+/* *-----------------Cards---------------------- */
+
 .link {
   text-decoration: none;
 }
@@ -572,6 +605,49 @@ img {
 
 .item-list {
   text-decoration: none;
+}
+
+.project-thumb {
+  position: relative;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-thumb:hover::before {
+  opacity: 1;
+}
+.project-thumb::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--accent-color);
+}
+.links-works:hover .project-card,
+.links-works:focus .project-card {
+  opacity: 1;
+}
+
+.project-card {
+  position: absolute;
+  padding: 40px 32px 164px 32px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: var(--accent-color);
+}
+
+.project-text {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--additional-background-color);
+  margin: 0;
 }
 
 .portfolio-title {
@@ -591,7 +667,7 @@ img {
   background: #ffffff;
 }
 
-/*------------------ Footer ---------------*/
+/**------------------ Footer ---------------*/
 .footer {
   background-color: var(--title-text-color);
 }
@@ -653,7 +729,8 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--main-text-color);
+  background-color: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-ftr {
   width: 24px;
@@ -661,5 +738,59 @@ img {
 }
 .footer-link:hover,
 .footer-link:focus {
-  background: var(--bgd-color-icon);
+  background-color: var(--bgd-color-icon);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-color);
+  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 408px;
+  min-height: 576px;
+  background-color: var(--modal-bgd-color);
+}
+
+.icon-modal {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-modal {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  top: 24px;
+  left: 360px;
+  bottom: 528px;
+  border-radius: 50%;
+  border: 1px solid var(--modal-close-color);
+  background-color: var(--footer-text-color);
+  cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
 }
